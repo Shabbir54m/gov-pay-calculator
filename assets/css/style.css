@@ -1,0 +1,151 @@
+/* Custom CSS & Print Optimizations */
+body, html {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    font-family: 'Anek Bangla', 'Noto Sans Bengali', sans-serif;
+    background-color: #f1f5f9;
+}
+
+.custom-shadow {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.print-header {
+    display: none;
+}
+
+/* PERFECT SINGLE-PAGE A4 PRINT STYLES */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 5mm 8mm;
+    }
+    html, body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10px !important;
+        line-height: 1.15 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 100%;
+        overflow: hidden !important;
+        -webkit-user-select: auto !important;
+        user-select: auto !important;
+    }
+    .no-print, header, footer, .lg\:col-span-5 {
+        display: none !important;
+    }
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+    .lg\:col-span-7 {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .grid {
+        display: block !important;
+    }
+    .space-y-6 > * + * {
+        margin-top: 4px !important;
+    }
+    .custom-shadow {
+        box-shadow: none !important;
+    }
+    .bg-white {
+        border: 1px solid #cbd5e1 !important;
+        padding: 4px 8px !important;
+        margin-bottom: 4px !important;
+        border-radius: 4px !important;
+        break-inside: avoid !important;
+    }
+    .overflow-x-auto, .max-h-96 {
+        overflow: visible !important;
+        max-height: none !important;
+    }
+    .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 4px;
+        border-bottom: 2px solid #059669;
+        padding-bottom: 2px;
+    }
+    .print-header h1 {
+        font-size: 15px !important;
+        font-weight: bold;
+        margin: 0;
+    }
+    .print-header p {
+        font-size: 9px !important;
+        margin: 0;
+    }
+    h2 {
+        font-size: 11px !important;
+        margin-bottom: 2px !important;
+        padding-bottom: 1px !important;
+    }
+    p {
+        margin: 0 !important;
+    }
+    table {
+        font-size: 9px !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+    th, td {
+        padding: 1.5px 4px !important;
+        line-height: 1.1 !important;
+    }
+    .grid-cols-3, .md\:grid-cols-3 {
+        display: grid !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+    }
+    .p-4, .p-6 {
+        padding: 4px !important;
+    }
+    .mb-4, .mb-3, .mb-2 {
+        margin-bottom: 2px !important;
+    }
+    .pb-3, .pb-2 {
+        padding-bottom: 2px !important;
+    }
+    .text-xl {
+        font-size: 12px !important;
+    }
+    .text-lg {
+        font-size: 11px !important;
+    }
+    .text-base {
+        font-size: 10px !important;
+    }
+    .text-xs, .text-\[11px\], .text-\[10px\] {
+        font-size: 8px !important;
+    }
+    #stepsTableBody tr {
+        font-size: 8px !important;
+    }
+    #stepsTableBody td {
+        padding: 1px 3px !important;
+    }
+}
